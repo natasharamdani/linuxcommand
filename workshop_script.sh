@@ -1,0 +1,1 @@
+awk -F "," '{key = $1","$2; birth[key]=$3;register[key]=$4;} {resKey = ""; res = -1; for (key in birth) {birthDate= strftime("%F",birth[key]);regisDate=strftime("%F",register[key]);regisAge=regisDate-birthDate; if ((regisAge) > res) {res = regisAge; resKey = key;}}}; END {print resKey","regisAge}' Downloads/workshop.csv
