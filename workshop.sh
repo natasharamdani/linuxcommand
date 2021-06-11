@@ -1,0 +1,1 @@
+awk -F ',' '$4-$3 > max {firstname = $1;lastname = $2; max = $4-$3}END{print firstname,",",lastname,",",int(max/31536000), "tahun"}' workshop.csv
