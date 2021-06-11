@@ -1,0 +1,1 @@
+cat workshop.csv | awk -F',' '{print $1","$2","int(($4-$3)/31536000)}' | sort -t, -nk 3 | tail -n 1
