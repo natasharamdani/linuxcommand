@@ -1,0 +1,1 @@
+awk -F ',' -v max_age=-1 '{ age=$4-$3; if(age > max_age){first_name=$1;last_name=$2;max_age=age}} END {print first_name","last_name","int(max_age/(31556926))}' workshop.csv
