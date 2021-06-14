@@ -12,5 +12,5 @@ do
    fi    
 done < workshop.csv
 
-max=`date -r $max`
+max=max=$(($(date -r $max +'%Y')-1970))
 echo "$mFirst, $mLast, $max"
