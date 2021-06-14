@@ -1,0 +1,1 @@
+awk -F "," '{yearGap=$4-$3} {if (yearGap>bdrd) {{fn=$1}{ln=$2}{bdrd=yearGap}}} {printf("%s,%s,%d\n",fn,ln,bdrd/31536000)}' workshop.csv | tail -n 1
